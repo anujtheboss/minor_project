@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="\static\style.css">
+    <script src="\static\script.js" defer></script>
+    <script src="https://kit.fontawesome.com/f2ae13f1ba.js" crossorigin="anonymous"></script></head>
+<body>
+    <header>
+        <nav class="navigate">
+        <h2 class="logo">Crops Recommendation</h2>
+
+            <ul class="links">
+                <li><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">services</a></li>
+            </ul>
+            <button class="login-btn">Login</button>
+        </nav>
+    </header>
+    
+    <div class="blur-back"></div>
+    <div class="red">
+        {% if message %}
+        <p>{{message}}</p>
+        {% endif %}
+    </div>
+    <div class="popup-form">
+        <span class=" close-btn material-symbols-rounded"><i class="fa-solid fa-xmark"></i></span>
+        <div class="formbox login">
+            <div class="form-detail">
+                <h2>welcome back</h2>
+                <p>please login in your personal information to stay connected with us.</p>
+            </div>
+            <div class="form-content">
+                <form method="POST" action="/login">
+                    <h2>LOGIN</h2>
+                    <div class="input-field"><input type="text" name="username" required><label>username</label></div>
+                    
+                    <div class="input-field"><input type="password" name="password" required><label>password</label></div>
+                    
+                    <a href="#" class="forgot-password">forgot password?</a>
+                    <button type="submit">Login</button>
+                </form>
+                <div class="button-link">
+                    Dont have an account?
+                    <a href="#" id="signup-link">signup</a>
+                </div>
+            </div>
+        </div>
+          <!-- ------------------------signup----------------------------- -->
+        <div class="formbox signup">
+            <div class="form-detail">
+                <h2>Create account</h2>
+                <p>To be the part of our community please signup us using your information</p>
+            </div>
+            <div class="form-content">
+                <form method="POST" action="/register">
+                    <h2>SIGNUP</h2>
+                    <div class="input-field"><input type="text" name="username" required><label>username</label></div>
+                    
+                    <div class="input-field"><input type="password" name="password" required><label>password</label></div>
+                    
+                    <div class="policy-text">
+                        <input type="checkbox" id="policy">
+                        <label for="policy">I agree the <a href="#">terms and conditions.</a></label>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <div class="button-link">
+                    Already have an account?
+                    <a href="#" id="login-link">login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    
+</body>
+</html>
